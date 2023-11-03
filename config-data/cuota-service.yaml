@@ -1,5 +1,6 @@
 server:
-  port: 8081 # El puerto donde corre el servicio
+  port: ${PORT:${random.int(8000,8999)}}
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/CuotaDB
@@ -10,3 +11,12 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
