@@ -1,0 +1,12 @@
+server:
+  port: 8082 # El puerto donde corre el servicio
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ExamenDB
+    username: postgres
+    password: ezequiel2001
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
