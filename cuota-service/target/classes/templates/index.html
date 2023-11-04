@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TopEducation - Menú Principal</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/indexStyle.css}" />
+</head>
+<body>
+<div class="container">
+    <h1 class="page-title">TopEducation</h1>
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <a th:href="@{/Estudiante/reporteEstudiantes}" class="menu-item d-block">Reporte Estudiantes</a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a th:href="@{/Cuota/byRut}" class="menu-item d-block">Buscar Cuotas</a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a th:href="@{/Examen/importarNotas}" class="menu-item d-block">Importar Notas</a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a th:href="@{/Estudiante/registroEstudiante}" class="menu-item d-block">Registro Estudiante</a>
+        </div>
+        <div class="col-md-3 mb-3">
+            <a th:href="@{/Estudiante/reporte}" class="menu-item d-block">Reporte Pagos</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

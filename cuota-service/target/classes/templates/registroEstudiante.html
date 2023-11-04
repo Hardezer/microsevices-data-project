@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Estudiante</title>
+    <link rel="stylesheet" th:href="@{/estilos.css}" />
+    <script>
+        function actualizarMaximoCuotas() {
+            const colegio = document.getElementById('tipoColegioProcedencia').value;
+            const inputCuotas = document.getElementById('numeroCuotas');
+            const metodoPago = document.getElementById('metodoPago').value;
+            const labelCuotas = document.getElementById('labelCuotas');
+
+            if (colegio === "Municipal") {
+                inputCuotas.setAttribute("max", "10");
+            } else if (colegio === "Subvencionado") {
+                inputCuotas.setAttribute("max", "7");
+            } else if (colegio === "Privado") {
+                inputCuotas.setAttribute("max", "4");
+            }
+
+            if (metodoPago === "Al Contado") {
+                inputCuotas.style.display = "none"; // Ocultar el campo de número de cuotas
+                labelCuotas.style.display = "none"; // Ocultar el texto
+                inputCuotas.value = "1"; // Asignar el valor 1
+            } else {
+                inputCuotas.style.display = "block"; // Mostrar el campo de número de cuotas
+                labelCuotas.style.display = "block"; // Mostrar el texto
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Formulario de Registro de Estudiante</h2>
+<form th:action="@{/Estudiante/crearEstudiante}" method="post">
+
+    <label for="rut">RUT (sin puntos y con guion):</label>
+    <input type="text" id="rut" name="rut" pattern="\d{7,8}-[\dkK]" title="Formato: XXXXXXXX-X o XXXXXXX-X" required><br><br>
+
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" name="apellidos" pattern="[A-Za-z\s]+" title="Solo letras permitidas" required><br><br>
+
+    <label for="nombres">Nombres:</label>
+    <input type="text" id="nombres" name="nombres" pattern="[A-Za-z\s]+" title="Solo letras permitidas" required><br><br>
+
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento" max="${currentDate}" required><br><br>
+
+    <label for="tipoColegioProcedencia">Tipo de Colegio de Procedencia:</label>
+    <select id="tipoColegioProcedencia" name="tipoColegioProcedencia" required onchange="actualizarMaximoCuotas()">
+        <option value="">Seleccione</option>
+        <option value="Municipal">Municipal</option>
+        <option value="Subvencionado">Subvencionado</option>
+        <option value="Privado">Privado</option>
+    </select><br><br>
+
+    <label for="metodoPago">Método de Pago:</label>
+    <select id="metodoPago" name="metodoPago" required onchange="actualizarMaximoCuotas()">
+        <option value="">Seleccione</option>
+        <option value="Al Contado">Al Contado</option>
+        <option value="En Cuotas">En Cuotas</option>
+    </select><br><br>
+
+    <label for="nombreColegio">Nombre del Colegio:</label>
+    <input type="text" id="nombreColegio" name="nombreColegio" required><br><br>
+
+    <label for="anoEgresoColegio">Año de Egreso del Colegio:</label>
+    <input type="number" id="anoEgresoColegio" name="anoEgresoColegio" max="${currentDate}" required><br><br>
+
+    <label for="numeroCuotas" id="labelCuotas">Número de Cuotas:</label>
+    <input type="number" id="numeroCuotas" name="numeroCuotas" min="1" required><br><br>
+
+    <input type="submit" value="Registrar">
+</form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+com\example\demo\DemoApplication.class
+com\example\demo\servicesTest\ExamenService.class
+com\example\demo\controllers\EstudianteController.class
+com\example\demo\controllers\CuotaController.class
+com\example\demo\controllers\ExamenController.class
+com\example\demo\servicesTest\EstudianteService.class
+com\example\demo\entities\Reporte.class
+com\example\demo\entities\Estudiante.class
+com\example\demo\repositories\EstudianteRepository.class
+com\example\demo\entities\Cuota.class
+com\example\demo\entities\Examen.class
+com\example\demo\repositories\ExamenRepository.class
+com\example\demo\servicesTest\CuotaService.class
+com\example\demo\repositories\CuotaRepository.class

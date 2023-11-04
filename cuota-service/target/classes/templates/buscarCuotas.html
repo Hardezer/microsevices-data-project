@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Buscar Cuotas por RUT</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-sm my-4">
+    <h1>Buscar Cuotas por RUT</h1>
+    <form th:action="@{/Cuota/byRut}" method="post" class="mb-3">
+        <div class="mb-3">
+            <label for="rut" class="form-label">Ingrese el RUT del estudiante:</label>
+            <input type="text" id="rut" name="rut" required class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>RUT Estudiante</th>
+            <th>Número de Cuota</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Monto de Cuota</th>
+            <th>Estado de Pago</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cuota : ${cuotas}">
+            <td th:text="${cuota.estudiante.rut}"></td>
+            <td th:text="${cuota.numeroCuota}"></td>
+            <td th:text="${cuota.fechaVencimiento}"></td>
+            <td th:text="${cuota.montoCuota}"></td>
+            <td th:text="${cuota.estadoPago}" th:class="${cuota.estadoPago == 'Atrasada' ? 'text-danger' : (cuota.estadoPago == 'Pagada' ? 'text-success' : 'text-warning')}"></td>
+            <td>
+                <form th:if="${cuota.estadoPago != 'Pagada'}" th:action="@{/Cuota/pagarCuota}" method="post">
+                    <input type="hidden" name="cuotaId" th:value="${cuota.id}" />
+                    <button type="submit" class="btn btn-primary">Pagar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
