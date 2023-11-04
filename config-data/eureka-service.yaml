@@ -1,4 +1,4 @@
-  port: 8082 # El puerto donde corre el servicio
+  port: 8761 # El puerto donde corre el servicio
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ExamenDB
