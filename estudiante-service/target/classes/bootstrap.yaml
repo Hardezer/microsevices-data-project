@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: estudiante-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+  datasource:
+    url: jdbc:postgresql://localhost:5432/EstudianteDB
+    username: postgres
+    password: ezequiel2001
+  jpa:
+    hibernate:
+      ddl-auto: update
+  logging:
+    level:
+      org:
+        springframework: DEBUG

@@ -1,0 +1,14 @@
+com\example\demo\servicesTest\EstudianteService$1.class
+com\example\demo\DemoApplication.class
+com\example\demo\controllers\EstudianteController.class
+com\example\demo\config\config.class
+com\example\demo\servicesTest\EstudianteService.class
+com\example\demo\config\CorsConfig.class
+com\example\demo\entities\Estudiante.class
+com\example\demo\servicesTest\EstudianteService$2.class
+com\example\demo\repositories\EstudianteRepository.class
+com\example\demo\config\CorsConfig$1.class
+com\example\demo\entities\Examen.class
+com\example\demo\models\Reporte.class
+com\example\demo\models\Cuota.class
+com\example\demo\servicesTest\EstudianteService$3.class

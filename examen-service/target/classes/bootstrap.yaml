@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: examen-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ExamenDB
+    username: postgres
+    password: ezequiel2001
+  jpa:
+    hibernate:
+      ddl-auto: update
+

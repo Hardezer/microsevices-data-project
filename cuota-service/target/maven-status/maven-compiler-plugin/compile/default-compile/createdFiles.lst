@@ -1,0 +1,11 @@
+com\example\demo\DemoApplication.class
+com\example\demo\entities\Cuota.class
+com\example\demo\models\Examen.class
+com\example\demo\config\CorsConfig$1.class
+com\example\demo\controllers\CuotaController.class
+com\example\demo\config\config.class
+com\example\demo\config\CorsConfig.class
+com\example\demo\servicesTest\CuotaService.class
+com\example\demo\entities\Reporte.class
+com\example\demo\repositories\CuotaRepository.class
+com\example\demo\models\Estudiante.class

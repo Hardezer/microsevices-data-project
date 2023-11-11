@@ -1,0 +1,12 @@
+com\example\demo\DemoApplication.class
+com\example\demo\servicesTest\ExamenService.class
+com\example\demo\config\config.class
+com\example\demo\controllers\ExamenController.class
+com\example\demo\config\CorsConfig.class
+com\example\demo\entities\Reporte.class
+com\example\demo\entities\Estudiante.class
+com\example\demo\servicesTest\ExamenService$1.class
+com\example\demo\entities\Cuota.class
+com\example\demo\config\CorsConfig$1.class
+com\example\demo\entities\Examen.class
+com\example\demo\repositories\ExamenRepository.class
